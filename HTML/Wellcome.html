@@ -1,24 +1,33 @@
-<div class="ImagenLogoSuperior">
-    <img src="Images/Logo.svg" />
+<img src="Images/FondoHome.jpg" id="BackgroundImageFull" alt="">
+
+<img src="Images/LogoApp.svg" class="LogoHome" />
+
+<a class="BotonIniciar BotonAplicativo"><span>INICIAR</span></a>
+
+<div class="FooterLegalHome">
+   <p>Material dirigido exclusivamente a Profesionales de la Salud. Todos los derechos reservados. Prohibida su reproducción total o parcial. Carrera 7 # 123-35 piso 6, Bogotá DC. Colombia. <b>COL-103-0523-80002</b></p> 
 </div>
-<div class="CuerpoContenido">
-    <div class="TitulosIndex">
-        <p style="font-family: BebasNeueBook !important;" class="TextosSubtitulos">PROTEGE LAS PERSONAS</p>
-        <p class="TextosSubtitulos">DEFIENDE LOS DATOS</p>
-    </div>
-    <div class="ContenidoColumnas">
-        <div class="ColumnaFlex Columna35Porciento">
-            <img src="Images/BarcoHome.png" />
+
+<div class="PopUpRegistro" id="PopUpRegistro" style="display:block;">
+    <img src="Images/Overlay.jpg" id="BackgroundImageFull" class="FondoPopUpRegistro" alt="">
+
+
+    
+
+    <div class="FormaRegistro">
+        <img src="Images/LogoRegistro.png" class="LogoRegistro" />
+        <form onsubmit="return TryLogin(this)" action="#">
+           <div class="ContainerCampoRegistro"> <p>
+               <input type="text" placeholder="Username" id="idNombreCompleto" name="nombreJugador"  minlength="4" maxlength="50">
+            </p>
         </div>
-        <div class="ColumnaFlex Columna65Porciento">
-            <img src="Images/FraseHome.svg" />
-            <div style="height:12vh;"></div>
-            <p class="TextoParrafo" style="text-align:right; line-height:1.5em;">Los ciberdelincuentes saben que
-                sus empleados ofrecen la vía más fácil para acceder a su empresa. Defiéndalos. Protéjalos.
-                Empodérelos con Proofpoint.</p>
             <div style="height:3vh;"></div>
-            <a class="BotonGradiente" href="javascript:views.GoTo('Registro')">Juega!</a>
-        </div>
+            <p>
+               <button type="submit" class="BotonAplicativo" style="min-width: 25vh;">
+               <span>JUGAR</span>
+               </button>
+            </p>
+         </form>
+
     </div>
-    <div style="height:2vh;"></div>
 </div>
