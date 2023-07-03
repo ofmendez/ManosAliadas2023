@@ -238,6 +238,61 @@ z-index:4;
 	z-index: 2;
 }
 
+/* SeleccionNivel */
+
+.LogoSeleccion{
+	width:20vh;
+	position:absolute;
+	top:2%;
+	left:50%;
+	transform: translate(-50%, 0%);
+	filter: drop-shadow(9px 9px 2px #55555555);
+	z-index:6 !important;
+	}
+
+
+	.ContenedorNiveles{
+height:55vh;
+overflow-y: scroll;
+overflow-x: hidden;
+width: 80%;
+margin: 0 auto;
+padding-right: 10px;
+	}
+
+.ContenedorSeleccionNivel{
+	background:url(../Images/FondoRespuesta.png) no-repeat center center;
+	background-size: 100% 100%;
+	padding: 16px 2px;
+	display: block;
+}
+
+.BotonSeleccionNivel{
+
+	color: #fff;
+	font-family: Gordita-Bold;
+	
+}
+.BotonSeleccionNivel span{
+	font-family: Gordita-Medium;
+	font-size:12px;
+}
+
+.NivelInactivo{
+	filter: grayscale(100%);
+	pointer-events: none;
+}
+
+.LogoSeleccionFinal{
+	width:18vh;
+	position:absolute;
+	bottom:2%;
+	left:50%;
+	transform: translate(-50%, 0%);
+	filter: drop-shadow(9px 9px 2px #55555555);
+	z-index:6 !important;
+	}
+
 /* Preguntas */
 
 .LogoPreguntas{
@@ -375,6 +430,15 @@ z-index:4;
 
 .MensajeSigueJugando{
 	position: absolute;
+	top:48%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	width:75%;
+}
+
+.MensajeFinalJuego{
+	position: absolute;
 	top:58%;
 	left:50%;
 	transform: translate(-50%, -50%);
@@ -390,6 +454,14 @@ z-index:4;
 	transform: translate(-50%, 0%);
 	filter: drop-shadow(9px 9px 2px #55555555);
 	z-index:6 !important;
+	}
+
+	.BotonRegresarNiveles{
+		position: absolute;
+		top:88%;
+		left:50%;
+		transform: translate(-50%, -50%);
+		z-index: 5;
 	}
 
 /*Ranking*/
