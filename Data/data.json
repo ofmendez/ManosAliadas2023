@@ -3,131 +3,355 @@
         "Questions":[
             {
                 "id": "0",
-                "statement": "¿Con qué plataforma de SIEM podemos integrar nuestra aplicación?",
+                "statement": "¿Cómo analizar la evidencia de un Biosimilar?",
                 "Answers":[
                     {
                         "id":"0",
-                        "text":"Splunk",
-                        "isCorrect": false 
+                        "text":"Con Datos Analíticos, Pre-Clínicos, FC/DF, Clínicos.",
+                        "isCorrect": true,
+                        "level":"1"
                     },
                     {
                         "id":"1",
-                        "text":"Qradar",
-                        "isCorrect": false 
+                        "text":"Revisando solo los estudios Fase III.",
+                        "isCorrect": false,
+                        "level":"1"
                     },
                     {
                         "id":"2",
-                        "text":"SIEM",
-                        "isCorrect": false 
-                    },
-                    {
-                        "id":"3",
-                        "text":"Cualquiera del mercado",
-                        "isCorrect": true 
+                        "text":"Validando que tenga aprobación de EMA, FDA e INIVMA.",
+                        "isCorrect": false,
+                        "level":"1"
                     }
                 ]
             },
             {
                 "id": "1",
-                "statement": "¿Cómo se llama nuestro módulo de amenazas avanzadas?",
+                "statement": "Para que un producto biológico se considere Biosimilar debe demostrar:",
                 "Answers":[
                     {
                         "id":"0",
-                        "text":"TRAP",
-                        "isCorrect": false 
+                        "text":"La misma eficacia, potencia y seguridad que el producto con el que se compra.",
+                        "isCorrect": false,
+                        "level":"1"
                     },
                     {
                         "id":"1",
-                        "text":"TAP",
-                        "isCorrect": true 
+                        "text":"Tener la misma concentración y dosificación del producto de referencia.",
+                        "isCorrect": false,
+                        "level":"1"
                     },
                     {
                         "id":"2",
-                        "text":"Information Protection",
-                        "isCorrect": false 
-                    },
-                    {
-                        "id":"3",
-                        "text":"Ninguno de los anteriores",
-                        "isCorrect": false 
+                        "text":"Todas las anteriores.",
+                        "isCorrect": true,
+                        "level":"1"
                     }
                 ]
             },
             {
                 "id": "2",
-                "statement": "¿Qué engine bloquea correo malicioso en la conexión?",
+                "statement": "Los atributos de calidad para considerar en la evaluación de un Biosimilar son:",
                 "Answers":[
                     {
                         "id":"0",
-                        "text":"Listas negras",
-                        "isCorrect": false 
+                        "text":"Proceso de Producción.",
+                        "isCorrect": false,
+                        "level":"1" 
                     },
                     {
                         "id":"1",
-                        "text":"Reglas en email firewall",
-                        "isCorrect": false 
+                        "text":"Análisis exhaustivo de la caracterización analítica.",
+                        "isCorrect": false,
+                        "level":"1"
                     },
                     {
                         "id":"2",
-                        "text":"Reputación (PDR)",
-                        "isCorrect": true 
+                        "text":"Historial de Suministro.",
+                        "isCorrect": false,
+                        "level":"1"
                     },
                     {
                         "id":"3",
-                        "text":"Impostor",
-                        "isCorrect": false 
+                        "text":"Todas las anteriores.",
+                        "isCorrect": true,
+                        "level":"1"
                     }
                 ]
             },
             {
                 "id": "3",
-                "statement": "¿Cómo se llama el módulo que revisa el cumplimiento de normativas?",
+                "statement": "El análisis molecular de los tumores sólidos se refiere a un análisis ___________ y el de la sangre (Glóbulos blancos) a ___________.",
                 "Answers":[
                     {
                         "id":"0",
-                        "text":"Email Protection",
-                        "isCorrect": false 
+                        "text":"Germinal/ Somático.",
+                        "isCorrect": false,
+                        "level":"2"
                     },
                     {
                         "id":"1",
-                        "text":"Email Encryption",
-                        "isCorrect": false 
+                        "text":"Somático/ Germinal.",
+                        "isCorrect": true,
+                        "level":"2"
                     },
                     {
                         "id":"2",
-                        "text":"Information Protection",
-                        "isCorrect": true 
+                        "text":"Genético/Somático.",
+                        "isCorrect": false,
+                        "level":"2"
                     },
                     {
                         "id":"3",
-                        "text":"Targeted Attack Protection",
-                        "isCorrect": false 
+                        "text":"Germinal/Herencia.",
+                        "isCorrect": false,
+                        "level":"2"
                     }
                 ]
             },
             {
                 "id": "4",
-                "statement": "¿Con qué fabricantes se integra la solución presentada?",
+                "statement": "La práctica en la cual se define el tratamiento basado en las características particulares del paciente y de su tumor se define como:",
                 "Answers":[
                     {
                         "id":"0",
-                        "text":"CyberArk",
-                        "isCorrect": false 
+                        "text":"Medicina molecular.",
+                        "isCorrect": false,
+                        "level":"2"
                     },
                     {
                         "id":"1",
-                        "text":"Palo Alto Networks",
-                        "isCorrect": false 
+                        "text":"Terapia génica.",
+                        "isCorrect": false,
+                        "level":"2"
                     },
                     {
                         "id":"2",
-                        "text":"SailPoint",
-                        "isCorrect": false 
+                        "text":"Medicina personalizada.",
+                        "isCorrect": true,
+                        "level":"2"
                     },
                     {
                         "id":"3",
-                        "text":"Todas las alternativas",
-                        "isCorrect": true 
+                        "text":"Medicina tradicional.",
+                        "isCorrect": false,
+                        "level":"2"
+                    }
+                ]
+            },
+            {
+                "id": "5",
+                "statement": "Las terapias blanco buscan:",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Afectar únicamente a la célula cancerosa que tiene un daño particular.",
+                        "isCorrect": true,
+                        "level":"2"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Simplificar la aproximación terapéutica.",
+                        "isCorrect": false,
+                        "level":"2"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Usar más fármacos en un mismo paciente.",
+                        "isCorrect": false,
+                        "level":"2"
+                    },
+                    {
+                        "id":"3",
+                        "text":"Ninguna de las anteriores.",
+                        "isCorrect": false,
+                        "level":"2"
+                    }
+                ]
+            },
+            {
+                "id": "6",
+                "statement": "Durante la administración de Blincyto si un paciente presenta Síndrome de Liberación de Citoquinas ¿En qué grado o grados, Blincyto debe ser DESCONTINUADO de forma permanente?",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Grado 1.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Grado 2.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Grado 3.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"3",
+                        "text":"Grado 4.",
+                        "isCorrect": true,
+                        "level":"3"
+                    },
+                    {
+                        "id":"4",
+                        "text":"a y b.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"5",
+                        "text":"c y d.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"6",
+                        "text":"Todas las anteriores.",
+                        "isCorrect": false,
+                        "level":"3"
+                    }
+                ]
+            },
+            {
+                "id": "7",
+                "statement": "¿Cuál es la dosis inicial de Blincyto para los pacientes adultos (mayores a 45kg) en la indicación recaída o refractariedad?",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Del día 1 al 28 son 28 mcg/día.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Del día 1 al 28 son 9 mcg/día.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Del día 1 al 7 son 5 mcg/m2 /día y del día 8 al 28: 15 mcg/m2/día.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"3",
+                        "text":"Del día 1 al 7 son 9 mcg/día y del día 8 al 28: 28 mcg/día.",
+                        "isCorrect": true,
+                        "level":"3"
+                    }
+                ]
+            },
+            {
+                "id": "8",
+                "statement": "¿Cuántos días u horas puedo conservar la Bolsa IV preparada que contiene la solución para infusión de Blincyto?",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Temperatura ambiente hasta 27°C: 96 horas. Refrigerada entre 2°C a 8°C: 10 días.",
+                        "isCorrect": true,
+                        "level":"3"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Temperatura ambiente hasta 27°C: 100 horas. Refrigerada entre 2°C a 8°C: 20 días.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Temperatura ambiente hasta 27°C: 24 horas. Refrigerada entre 2°C a 8°C: 5 días.",
+                        "isCorrect": false,
+                        "level":"3"
+                    },
+                    {
+                        "id":"3",
+                        "text":"Temperatura ambiente hasta 27°C: 72 horas. Refrigerada entre 2°C a 8°C: 15 días.",
+                        "isCorrect": false,
+                        "level":"3"
+                    }
+                ]
+            },
+            {
+                "id": "9",
+                "statement": "Actualmente se considera relevante el estudio de los casos de pacientes oncológicos en grupos interdisciplinarios. ¿Debe hacer parte el patólogo de estos?",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Si.",
+                        "isCorrect": true,
+                        "level":"4"
+                    },
+                    {
+                        "id":"1",
+                        "text":"No.",
+                        "isCorrect": false,
+                        "level":"4"
+                    }
+                ]
+            },
+            {
+                "id": "10",
+                "statement": "En cuanto a los procesos que sufre una muestra de tumor o biopsia, en la fase pre-analítica suceden entre otras:",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"El tratamiento dado a la muestra antes de ser parafinada (Ej, fijación).",
+                        "isCorrect": true,
+                        "level":"4"
+                    },
+                    {
+                        "id":"1",
+                        "text":"El proceso de deshidratación y parafinación, corte de láminas.",
+                        "isCorrect": false,
+                        "level":"4"
+                    },
+                    {
+                        "id":"2",
+                        "text":"La tinción con Hematoxilina Eosina.",
+                        "isCorrect": false,
+                        "level":"4"
+                    },
+                    {
+                        "id":"3",
+                        "text":"La inmunohistoquimica.",
+                        "isCorrect": false,
+                        "level":"4"
+                    }
+                ]
+            },
+            {
+                "id": "11",
+                "statement": "Si el patólogo está involucrado en la solicitud de pruebas moleculares, ¿Cuáles son las principales ventajas para el paciente?",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Ninguna, perdida de recursos y tiempo.",
+                        "isCorrect": true,
+                        "level":"4"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Correcta caracterización de la patología.",
+                        "isCorrect": false,
+                        "level":"4"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Disminución de tiempos para diagnostico.",
+                        "isCorrect": false,
+                        "level":"4"
+                    },
+                    {
+                        "id":"3",
+                        "text":"Disminución de tiempos para inicio del tratamiento.",
+                        "isCorrect": false,
+                        "level":"4"
                     }
                 ]
             }
