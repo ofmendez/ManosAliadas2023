@@ -210,7 +210,7 @@ z-index:4;
 .FooterLegalInstrucciones02{
 	position: absolute;
 	bottom:-2px;
-	width:70%;
+	width:95%;
 	right: 0;
 	text-align: right;
 }
@@ -263,7 +263,7 @@ padding-right: 10px;
 .ContenedorSeleccionNivel{
 	background:url(../Images/FondoRespuesta.png) no-repeat center center;
 	background-size: 100% 100%;
-	padding: 16px 2px;
+	padding: 16px 26px;
 	display: block;
 }
 
@@ -439,11 +439,20 @@ padding-right: 10px;
 
 .MensajeFinalJuego{
 	position: absolute;
-	top:58%;
+	top:55%;
 	left:50%;
 	transform: translate(-50%, -50%);
 	z-index: 1;
 	width:75%;
+}
+
+.BotonRecursos{
+	position: absolute;
+	top:83%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	width:55%;
 }
 
 .LogoFinal{

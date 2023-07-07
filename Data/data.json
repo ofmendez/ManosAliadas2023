@@ -31,7 +31,7 @@
                 "Answers":[
                     {
                         "id":"0",
-                        "text":"La misma eficacia, potencia y seguridad que el producto con el que se compra.",
+                        "text":"La misma eficacia, potencia y seguridad que el producto con el que se compara.",
                         "isCorrect": false,
                         "level":"1"
                     },
@@ -67,7 +67,7 @@
                     },
                     {
                         "id":"2",
-                        "text":"Historial de Suministro.",
+                        "text":"Historial de suministro.",
                         "isCorrect": false,
                         "level":"1"
                     },
@@ -85,13 +85,13 @@
                 "Answers":[
                     {
                         "id":"0",
-                        "text":"Germinal/ Somático.",
+                        "text":"Germinal/Somático.",
                         "isCorrect": false,
                         "level":"2"
                     },
                     {
                         "id":"1",
-                        "text":"Somático/ Germinal.",
+                        "text":"Somático/Germinal.",
                         "isCorrect": true,
                         "level":"2"
                     },
@@ -196,24 +196,6 @@
                         "text":"Grado 4.",
                         "isCorrect": true,
                         "level":"3"
-                    },
-                    {
-                        "id":"4",
-                        "text":"a y b.",
-                        "isCorrect": false,
-                        "level":"3"
-                    },
-                    {
-                        "id":"5",
-                        "text":"c y d.",
-                        "isCorrect": false,
-                        "level":"3"
-                    },
-                    {
-                        "id":"6",
-                        "text":"Todas las anteriores.",
-                        "isCorrect": false,
-                        "level":"3"
                     }
                 ]
             },
@@ -235,7 +217,7 @@
                     },
                     {
                         "id":"2",
-                        "text":"Del día 1 al 7 son 5 mcg/m2 /día y del día 8 al 28: 15 mcg/m2/día.",
+                        "text":"Del día 1 al 7 son 5 mcg/m2/día y del día 8 al 28: 15 mcg/m2/día.",
                         "isCorrect": false,
                         "level":"3"
                     },
@@ -308,7 +290,7 @@
                     {
                         "id":"1",
                         "text":"El proceso de deshidratación y parafinación, corte de láminas.",
-                        "isCorrect": false,
+                        "isCorrect": true,
                         "level":"4"
                     },
                     {
@@ -332,26 +314,188 @@
                     {
                         "id":"0",
                         "text":"Ninguna, perdida de recursos y tiempo.",
-                        "isCorrect": true,
+                        "isCorrect": false,
                         "level":"4"
                     },
                     {
                         "id":"1",
                         "text":"Correcta caracterización de la patología.",
-                        "isCorrect": false,
+                        "isCorrect": true,
                         "level":"4"
                     },
                     {
                         "id":"2",
                         "text":"Disminución de tiempos para diagnostico.",
-                        "isCorrect": false,
+                        "isCorrect": true,
                         "level":"4"
                     },
                     {
                         "id":"3",
                         "text":"Disminución de tiempos para inicio del tratamiento.",
-                        "isCorrect": false,
+                        "isCorrect": true,
                         "level":"4"
+                    }
+                ]
+            },
+            {
+                "id": "12",
+                "statement": "¿Cuál es el objetivo de la Navegación en Oncología?",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Reducir la mortalidad y la morbilidad por cáncer a través de la eliminación de barreras a la atención oportuna del cáncer.",
+                        "isCorrect": true,
+                        "level":"5"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Solo se encarga de la coordinación de la atención del paciente con diagnóstico de cáncer.",
+                        "isCorrect": false,
+                        "level":"5"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Solo se encarga de las autorizaciones de las órdenes clínicas de los pacientes con diagnóstico oncológico.",
+                        "isCorrect": false,
+                        "level":"5"
+                    }
+                ]
+            },
+            {
+                "id": "13",
+                "statement": "¿En qué año inició la estrategia de Navegación para pacientes con cáncer?",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"1995.",
+                        "isCorrect": false,
+                        "level":"5"
+                    },
+                    {
+                        "id":"1",
+                        "text":"1990.",
+                        "isCorrect": true,
+                        "level":"5"
+                    },
+                    {
+                        "id":"2",
+                        "text":"2000.",
+                        "isCorrect": false,
+                        "level":"5"
+                    }
+                ]
+            },
+            {
+                "id": "14",
+                "statement": "Son tipos de Navegadores de pacientes, EXCEPTO:",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Navegación de enfermería en oncología clínica.",
+                        "isCorrect": false,
+                        "level":"5"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Navegación de autorizaciones clínicas.",
+                        "isCorrect": true,
+                        "level":"5"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Navegador de trabajo social de oncología clínica.",
+                        "isCorrect": false,
+                        "level":"5"
+                    }
+                ]
+            },
+            {
+                "id": "15",
+                "statement": "La dilución de Romiplostim es necesaria únicamente si el cálculo de la dosis total del paciente es: ",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Menor a 50 mcg.",
+                        "isCorrect": false,
+                        "level":"6"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Mayor a 32 mcg.",
+                        "isCorrect": false,
+                        "level":"6"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Menor a 23 mcg.",
+                        "isCorrect": true,
+                        "level":"6"
+                    },
+                    {
+                        "id":"3",
+                        "text":"Menor o igual a 32 mcg.",
+                        "isCorrect": false,
+                        "level":"6"
+                    }
+                ]
+            },
+            {
+                "id": "16",
+                "statement": "La concentración final de medicamento que se obtiene en los pasos de reconstitución y dilución del Romiplostim respectivamente son:",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Reconstitución: 500 mcg/ mL – Dilución: 125 mcg/ mL.",
+                        "isCorrect": true,
+                        "level":"6"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Reconstitución: 250 mcg/ mL – Dilución: 125 mcg/ mL.",
+                        "isCorrect": false,
+                        "level":"6"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Reconstitución: 500 mcg/ mL – Dilución: 225 mcg/ mL.",
+                        "isCorrect": false,
+                        "level":"6"
+                    },
+                    {
+                        "id":"3",
+                        "text":"Reconstitución: 250 mcg/ mL – Dilución: 72 mcg/ mL.",
+                        "isCorrect": false,
+                        "level":"6"
+                    }
+                ]
+            },
+            {
+                "id": "17",
+                "statement": "La dosis total del paciente se calcula:",
+                "Answers":[
+                    {
+                        "id":"0",
+                        "text":"Multiplicando el peso en kg por la dosis en mcg/kg, y dividiendo por 0,72 mL.",
+                        "isCorrect": false,
+                        "level":"6"
+                    },
+                    {
+                        "id":"1",
+                        "text":"Dividiendo el peso en kg en la dosis en mcg/kg.",
+                        "isCorrect": false,
+                        "level":"6"
+                    },
+                    {
+                        "id":"2",
+                        "text":"Multiplicando el peso en kg por la dosis en mcg/kg. ",
+                        "isCorrect": true,
+                        "level":"6"
+                    },
+                    {
+                        "id":"3",
+                        "text":"Multiplicando el peso en kg por la dosis en mcg/kg y dividiendo por 2,25 mL.",
+                        "isCorrect": false,
+                        "level":"6"
                     }
                 ]
             }
