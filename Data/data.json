@@ -279,11 +279,11 @@
             },
             {
                 "id": "10",
-                "statement": "En cuanto a los procesos que sufre una muestra de tumor o biopsia, en la fase pre-analítica suceden entre otras:",
+                "statement": "Cuál de los siguientes procesos le ocurre a una muestra de tumor o biopsia en la fase preanalítica",
                 "Answers":[
                     {
                         "id":"0",
-                        "text":"El tratamiento dado a la muestra antes de ser parafinada (Ej, fijación).",
+                        "text":"El tratamiento dado a la muestra antes de ser parafinada (Ej. fijación).",
                         "isCorrect": true,
                         "level":"4"
                     },
