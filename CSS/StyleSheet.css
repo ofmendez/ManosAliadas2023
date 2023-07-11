@@ -299,7 +299,7 @@ padding-right: 10px;
 
 @media (max-width: 768px) {
 	.ContenedorNiveles{
-		height:60vh;
+		height:56vh;
 	}
 }
 
@@ -421,7 +421,7 @@ padding-right: 10px;
 
 @media (max-width: 768px) {
 	.ImagenRespuestas{
-		width:12%;
+		display:none;
 	}
 }
 
@@ -445,7 +445,7 @@ padding-right: 10px;
 }
 
 .BotonRespuesta {
-	font-size: 14px;
+	font-size: 12px;
 	color: #fff;
 	width: 85%;
 	margin: 0 auto;
@@ -458,7 +458,7 @@ padding-right: 10px;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	font-family: Gordita-Medium;
-	line-height: 1em;
+	line-height: 1.2em;
 }
 
 .RespuestaCorrecta {
