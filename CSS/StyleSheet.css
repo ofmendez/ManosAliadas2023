@@ -167,6 +167,7 @@ z-index:4;
 	color: white;
 	font-family: Gordita-Medium;
 	font-size: 8px;
+	line-height: 1em;
 }
 
 .PopUpRegistro{
@@ -416,6 +417,12 @@ padding-right: 10px;
 
 .ImagenRespuestas{
 	width:20%;
+}
+
+@media (max-width: 768px) {
+	.ImagenRespuestas{
+		width:12%;
+	}
 }
 
 .BloqueRespuestas {
