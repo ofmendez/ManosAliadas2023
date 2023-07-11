@@ -1,34 +1,22 @@
 import {getUserData, DeleteUser} from "./database.js";
 import {emailToId} from './utils.js'
-
 // populate table with new data
 function updateTable(users, values) {
-    const tbody = document.getElementById("t");
-    // clear existing data from tbody if it exists
-    tbody.innerHTML = "";
+    console.log(users);
+    let content = document.getElementById("ContenidoRanking");
+    content.innerHTML = "";
     let p = "";
-    let id =1;
-    users.forEach(user => {
-        p += "<tr>";
-        p += `<td>${id++}</td>`;
-            values.forEach(value => {
-                if (value === 'acceptAssesment'){
-                    if( user[value] ==="Si"){
-                        p += "<td>Si</td>";
-                        p += "<td>&nbsp;</td>";
-                    }else{
-                        p += "<td>&nbsp;</td>";
-                        p += "<td>No</td>";
-                    }
-                    return;
-                } 
-                p += "<td>" + user[value] + "</td>";
-            })
-        p += `<td><button onclick="Delete('${user["email"]}')">DELETE!</button></td>`;
-        p += "</tr>";
-    })
+    users.forEach((user,i) => {
+        p +=   `<div class="FranjaPuntaje">
+                <div class="NumeroPosicion">${i}.</div>
+                <div class="NombreJugador">${user.username}</div>
+                <div class="PuntajeJugador">${user.score}</div>
+            </div>`;
+    });
+    content.insertAdjacentHTML("beforeend", p);
 
-    tbody.insertAdjacentHTML("beforeend", p);
+
+
 }
 
 window.Delete = (email)=>{
@@ -41,15 +29,12 @@ window.Delete = (email)=>{
 window.Reload = ()=>{
     getUserData().then((usrObj)=>{
         let users = []
-        let usersYes = []
         for (const u in usrObj) 
             if (usrObj.hasOwnProperty(u)) 
                 users.push(usrObj[u]);
             
         
         users.sort((a, b) => { return b.score - a.score; });
-        document.getElementById('countYes').innerHTML =`(${users.filter(u => u.acceptAssesment === "Si").length})`
-        document.getElementById('countNo').innerHTML =`(${users.filter(u => u.acceptAssesment === "No").length})`
         console.log("da: ",users.length);
         updateTable(users, ['acceptAssesment','username', 'email', 'score', 'company', 'mailBox']);
         
@@ -71,3 +56,5 @@ function example() {
         });
     });
 }
+
+window.Reload();

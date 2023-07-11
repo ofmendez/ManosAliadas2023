@@ -40,12 +40,15 @@ export function getUserData() {
 
 
 
-export function updateScore(userId, newScore) {
-    return true;
+export function updateScore(userId, newScore, answers) {
     return new Promise((resolve,reject)=>{
         getDB().then((db)=>{
             const updates = {};
             updates['/users/' + userId+'/score'] = newScore;
+            Object.keys(answers).forEach((a,i)=>{
+                let index=(i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})
+                updates['/users/' + userId+'/p'+index] = answers[a];
+            });
             update(ref(db), updates).then(()=>{
                 resolve("Updated!! ")
             });
@@ -69,15 +72,16 @@ export function createUserData(_username) {
     return new Promise((resolve,reject)=>{
         getDB().then((db)=>{
             set(ref(db, 'users/' + _username), {
-                p1 : -1,
-                p2 : -1,
-                p3 : -1,
-                p4 : -1,
-                p5 : -1,
-                p6 : -1,
-                p7 : -1,
-                p8 : -1,
-                p9 : -1,
+                username : _username,
+                p01 : -1,
+                p02 : -1,
+                p03 : -1,
+                p04 : -1,
+                p05 : -1,
+                p06 : -1,
+                p07 : -1,
+                p08 : -1,
+                p09 : -1,
                 p10 : -1,
                 p11 : -1,
                 p12 : -1,

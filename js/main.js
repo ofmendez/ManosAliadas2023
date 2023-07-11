@@ -1,6 +1,6 @@
 import { ñ,InsertElement, ConmuteClassAndInner} from './utils.js'
 import {loadDataFile} from './files.js'
-import {createUserData ,getUserData} from "./database.js";
+import {createUserData ,getUserData, updateScore} from "./database.js";
 import * as views from "./views.js";
 
 
@@ -30,15 +30,15 @@ loadDataFile("txt").then((res)=>{
     // loadDataFile('json')
 
 window.TryLogin = (form)=>{
-    // Login(form);return true;
+    progress = localStorage.getItem("progress") || 0;
     getUserData().then((res)=>{
         let exist = false
         for (const u in res) 
             if (res.hasOwnProperty(u)) 
                 exist |= u=== form.elements['idUsername'].value
+        localStorage.setItem("userName", form.elements['idUsername'].value );
         if(exist)
-            console.log("User exist")
-            // GoRanking()
+            GoToLobby();
         else
             Login(form)
         return false;
@@ -89,14 +89,18 @@ const SetQuestionAndAnswers = (question)=>{
 const Answer = (ans, question)=>{
     let classTarget = ans.isCorrect ?'RespuestaCorrecta':'RespuestaIncorrecta';
     UpdateStatus(ans.id, ans.isCorrect)
+    // AnimateAnswer(ans,ñ('#answer'+ans.id), classTarget,  0);
     AnimateAnswer(ans,ñ('#answer'+ans.id), classTarget,  150);
 }
 
 const UpdateStatus = ( idAns, isCorrect)=>{
+    answered = JSON.parse( localStorage.answered ||JSON.stringify({}));
     answered[progress] = idAns;
+    localStorage.answered = JSON.stringify(answered);
     if (isCorrect)
         totalPoints += pointsBySuccess -timeTrans
     progress++;
+    localStorage.progress = progress;
 }
 
 
@@ -107,11 +111,12 @@ const RunTimer = ()=>{
     }, 1000);
 }
 const Login = (form)=>{
-    // views.GoTo("Instrucciones01");return true;
+    localStorage.removeItem("answered");
+    localStorage.removeItem("progress");
+    progress = 0;
     createUserData(
         form.elements['idUsername'].value,
     ).then((res)=>{
-        localStorage.setItem("userName", form.elements['idUsername'].value );
         views.GoTo("Instrucciones01").then(()=>{
             ñ('#idNext').addEventListener('click', (e)=>{
                 views.GoTo("Instrucciones02").then(()=>{
@@ -137,6 +142,7 @@ const AnimateAnswer = (ans, element, classTarget, interval)=>{
 }
 
 const ShowFinalMessage = (ans)=>{
+    clearInterval(countdownTimer);
     // views.GoTo("FinalTrivias").then(()=>{   
     views.GoTo("Retroalimentacion").then(()=>{   
         ñ('#BackgroundImageFull').src = ans.isCorrect? "../Images/FondoCorrecta.jpg":"../Images/FondoIncorrecta.jpg";
@@ -157,10 +163,12 @@ const NextQuestionOrResults = ()=>{
 
 const GoToResults = ()=>{
     document.body.classList.add('avoidEvents');
-    updateScore( userID, totalPoints, Questions, Object.values( answered)).then((res)=>{
+    updateScore( localStorage.getItem("userName"), totalPoints, answered)
+    .then((res)=>{
         views.GoTo("FinalTrivias").then((res)=>{
-            // ñ("#btnGoRank").addEventListener('click',()=> GoRanking());
-            ñ('#score').innerHTML = totalPoints;
+            console.log("Terminado!");
+            localStorage.removeItem("answered");
+            localStorage.removeItem("progress");
             document.body.classList.remove('avoidEvents');
         });
     }).catch((e) =>{
