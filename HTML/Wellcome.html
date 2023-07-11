@@ -1,35 +1,36 @@
 <img src="Images/FondoHome.jpg" id="BackgroundImageFull" alt="">
 
 <img src="Images/LogoApp.svg" class="LogoHome" />
+<div id="startButton">
 
-<a class="BotonIniciar BotonAplicativo"><span>INICIAR</span></a>
-
-<div class="FooterLegalHome">
-   <p>Material no promocional dirigido exclusivamente a Profesional de la salud para el ejercicio de su profesión y/o el uso adecuado del medicamento
-      En caso de eventos adversos reporte a farmacovigilanciaCO@amgen.com <br>
-      Amgen Biotecnológica S.A.S. Todos los derechos reservados. Prohibida su reproducción parcial o total. Cra. 7 # 123 - 35, piso 6, Bogotá, D.C., Colombia. <b>COL-103-0623-80006</b></p> 
+   <a  class="BotonIniciar BotonAplicativo"><span>INICIAR</span></a>
 </div>
 
-<div class="PopUpRegistro" id="PopUpRegistro" style="display:block;">
-    <img src="Images/Overlay.jpg" id="BackgroundImageFull" class="FondoPopUpRegistro" alt="">
+<div class="FooterLegalHome">
+   <p>Material no promocional dirigido exclusivamente a Profesional de la salud para el ejercicio de su profesión y/o el
+      uso adecuado del medicamento
+      En caso de eventos adversos reporte a farmacovigilanciaCO@amgen.com <br>
+      Amgen Biotecnológica S.A.S. Todos los derechos reservados. Prohibida su reproducción parcial o total. Cra. 7 # 123
+      - 35, piso 6, Bogotá, D.C., Colombia. <b>COL-103-0623-80006</b></p>
+</div>
 
+<div class="PopUpRegistro" id="PopUpRegistro" hidden>
+   <img src="Images/Overlay.jpg" id="BackgroundImageFull" class="FondoPopUpRegistro" alt="">
 
-    
-
-    <div class="FormaRegistro">
-        <img src="Images/LogoRegistro.png" class="LogoRegistro" />
-        <form onsubmit="return TryLogin(this)" action="#">
-           <div class="ContainerCampoRegistro"> <p>
-               <input type="text" placeholder="Username" id="idNombreCompleto" name="nombreJugador"  minlength="4" maxlength="50">
-            </p>
-        </div>
-            <div style="height:3vh;"></div>
+   <div class="FormaRegistro">
+      <img src="Images/LogoRegistro.png" class="LogoRegistro" />
+      <form onsubmit="return TryLogin(this)" action="#">
+         <div class="ContainerCampoRegistro">
             <p>
-               <button type="submit" class="BotonAplicativo" style="min-width: 25vh;">
-               <span>JUGAR</span>
-               </button>
+               <input type="text" placeholder="Username" id="idUsername" name="username" minlength="4" maxlength="50" required>
             </p>
-         </form>
-
-    </div>
+         </div>
+         <div style="height:3vh;"></div>
+         <p>
+            <button type="submit" class="BotonAplicativo" style="min-width: 25vh;">
+               <span>JUGAR</span>
+            </button>
+         </p>
+      </form>
+   </div>
 </div>

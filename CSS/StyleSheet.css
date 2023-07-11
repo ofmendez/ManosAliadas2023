@@ -379,7 +379,7 @@ padding-right: 10px;
 	overflow: visible;
 }
 
-.ContenedorRespuesta {
+.Respuesta {
 
 	display: flex;
 	align-items: center;
@@ -408,11 +408,11 @@ padding-right: 10px;
 	font-family: Gordita-Bold;
 }
 
-.BotonRespuestaCorrecta {
+.RespuestaCorrecta {
 	background-image: url("../Images/FondoRespuestaCorrecta.png") !important;
 }
 
-.BotonRespuestaIncorrecta {
+.RespuestaIncorrecta {
 	background-image: url("../Images/FondoRespuestaIncorrecta.png") !important;
 }
 
@@ -590,21 +590,58 @@ height: 100svh;
 /* width */
 ::-webkit-scrollbar {
 	width: 9px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
 	background: transparent;
 	border-radius: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
 	background: #EE706D;
 	border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
 	background: #555;
-  }
+}
+
+/* Fabian*/
+
+.spaceMediumvh {
+    height:0.5vh;
+}
+.space1vh {
+    height:1vh;
+}
+.space2vh {
+    height:2vh;
+}
+.avoidEvents{
+	pointer-events: none;
+}
+.interactable{
+	cursor: pointer;
+}
+[transparent] { 
+	visibility: hidden; 
+} 
+[grayscale] { 
+	filter: grayscale(1);
+	pointer-events: none;
+} 
+
+[nodisplay] { 
+	display: none; 
+} 
+.ContenedorPuntajes{
+	height: 42vh;
+	width:90%;
+	margin: 0 auto;
+	overflow: scroll;
+	overflow-x: hidden;
+	padding:0 1vh;
+}

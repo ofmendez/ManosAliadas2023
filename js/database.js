@@ -8,24 +8,24 @@ let app = {}
 let existDatabase = false;
 
 
-// const getDB = function (){
-//     return new Promise((resolve,reject)=>{
-//         if (existDatabase){
-//             resolve(database)
-//         } else{
-//             existDatabase =true;
-//             loadCredentials().then((res)=>{
-//                 firebaseConfig =res;
-//                 app = initializeApp(firebaseConfig);
-//                 database = getDatabase(app);
-//                 resolve(database);
-//             });
-//         }
-//     });
-// };
+const getDB = function (){
+    return new Promise((resolve,reject)=>{
+        if (existDatabase){
+            resolve(database)
+        } else{
+            existDatabase =true;
+            loadCredentials().then((res)=>{
+                firebaseConfig =res;
+                app = initializeApp(firebaseConfig);
+                database = getDatabase(app);
+                resolve(database);
+            });
+        }
+    });
+};
 
 export function getUserData() {
-    return true;
+    // return true;
     return new Promise((resolve,reject)=>{
         getDB().then((db)=>{
             const starCountRef = ref(db, '/users');
@@ -64,17 +64,29 @@ export function DeleteUser(userId) {
 }
 
 
-export function createUserData(userId, email, name, company, acceptAssesment, mailBox) {
-    return true;
+export function createUserData(_username) {
 
     return new Promise((resolve,reject)=>{
         getDB().then((db)=>{
-            set(ref(db, 'users/' + userId), {
-                username: name,
-                email: email,
-                company: company,
-                acceptAssesment: acceptAssesment,
-                mailBox: mailBox,
+            set(ref(db, 'users/' + _username), {
+                p1 : -1,
+                p2 : -1,
+                p3 : -1,
+                p4 : -1,
+                p5 : -1,
+                p6 : -1,
+                p7 : -1,
+                p8 : -1,
+                p9 : -1,
+                p10 : -1,
+                p11 : -1,
+                p12 : -1,
+                p13 : -1,
+                p14 : -1,
+                p15 : -1,
+                p16 : -1,
+                p17 : -1,
+                p18 : -1,
                 score : 0
             }).then((res)=> resolve("writted"));
         }).catch((e)=> reject("error getDB: "+e))

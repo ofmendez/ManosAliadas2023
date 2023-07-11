@@ -1,5 +1,4 @@
-
-export function InsertElement(tagToAdd, listClasses, content, targetParent, nameId ) {
+export function InsertElement(tagToAdd, listClasses, content, targetParent, nameId, prepend=false ) {
     // Create element
     const el = document.createElement(tagToAdd);
     
@@ -13,7 +12,10 @@ export function InsertElement(tagToAdd, listClasses, content, targetParent, name
     // Or add text content to element
     // el.textContent = content;
     // add element to DOM
-    targetParent.appendChild(el);
+    if(prepend)
+        targetParent.insertBefore(el, targetParent.firstChild);
+    else
+        targetParent.appendChild(el);
     return el;
 }
 
@@ -22,10 +24,9 @@ export function RandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-export function ConmuteClassAndInner(element, c1, c2, in1){
+export function ConmuteClassAndInner(element, c1, c2){
     element.classList.add(c1)
     element.classList.remove(c2)
-    element.innerHTML = in1
 }
 
 export function AnimateWithTransparent(el1, el2, interval) {
@@ -47,3 +48,14 @@ export function emailToId(email) {
     return email.replace(/@/g, ' at ').replace(/[^a-z0-9-]+/gi, '-').replace(/^-|-$/g, '');
 }
 
+export function ñ(el) {
+    switch (el.charAt(0)) {
+        case "#":  return document.querySelector(el)
+        case ".":  return Array.from(document.querySelectorAll(el))
+        default:   return document.getElementsByTagName(el)
+    }
+}
+
+export function range(len) {
+    return Array(len).fill(1).map((x, y) => x + y)
+}

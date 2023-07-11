@@ -3,499 +3,517 @@
         "Questions":[
             {
                 "id": "0",
+                "level":0,
                 "statement": "¿Cómo analizar la evidencia de un Biosimilar?",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Con Datos Analíticos, Pre-Clínicos, FC/DF, Clínicos.",
                         "isCorrect": true,
-                        "level":"1"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Revisando solo los estudios Fase III.",
                         "isCorrect": false,
-                        "level":"1"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Validando que tenga aprobación de EMA, FDA e INIVMA.",
                         "isCorrect": false,
-                        "level":"1"
+                        "step":2
                     }
                 ]
             },
             {
                 "id": "1",
+                "level":0,
                 "statement": "Para que un producto biológico se considere Biosimilar debe demostrar:",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"La misma eficacia, potencia y seguridad que el producto con el que se compara.",
                         "isCorrect": false,
-                        "level":"1"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Tener la misma concentración y dosificación del producto de referencia.",
                         "isCorrect": false,
-                        "level":"1"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Todas las anteriores.",
                         "isCorrect": true,
-                        "level":"1"
+                        "step":2
                     }
                 ]
             },
             {
                 "id": "2",
+                "level":0,
                 "statement": "Los atributos de calidad para considerar en la evaluación de un Biosimilar son:",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Proceso de Producción.",
                         "isCorrect": false,
-                        "level":"1" 
+                        "step":0 
                     },
                     {
                         "id":"1",
                         "text":"Análisis exhaustivo de la caracterización analítica.",
                         "isCorrect": false,
-                        "level":"1"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Historial de suministro.",
                         "isCorrect": false,
-                        "level":"1"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Todas las anteriores.",
                         "isCorrect": true,
-                        "level":"1"
+                        "step":1
                     }
                 ]
             },
             {
                 "id": "3",
+                "level":1,
                 "statement": "El análisis molecular de los tumores sólidos se refiere a un análisis ___________ y el de la sangre (Glóbulos blancos) a ___________.",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Germinal/Somático.",
                         "isCorrect": false,
-                        "level":"2"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Somático/Germinal.",
                         "isCorrect": true,
-                        "level":"2"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Genético/Somático.",
                         "isCorrect": false,
-                        "level":"2"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Germinal/Herencia.",
                         "isCorrect": false,
-                        "level":"2"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "4",
+                "level":1,
                 "statement": "La práctica en la cual se define el tratamiento basado en las características particulares del paciente y de su tumor se define como:",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Medicina molecular.",
                         "isCorrect": false,
-                        "level":"2"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Terapia génica.",
                         "isCorrect": false,
-                        "level":"2"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Medicina personalizada.",
                         "isCorrect": true,
-                        "level":"2"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Medicina tradicional.",
                         "isCorrect": false,
-                        "level":"2"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "5",
+                "level":1,
                 "statement": "Las terapias blanco buscan:",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Afectar únicamente a la célula cancerosa que tiene un daño particular.",
                         "isCorrect": true,
-                        "level":"2"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Simplificar la aproximación terapéutica.",
                         "isCorrect": false,
-                        "level":"2"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Usar más fármacos en un mismo paciente.",
                         "isCorrect": false,
-                        "level":"2"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Ninguna de las anteriores.",
                         "isCorrect": false,
-                        "level":"2"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "6",
+                "level":2,
                 "statement": "Durante la administración de Blincyto si un paciente presenta Síndrome de Liberación de Citoquinas ¿En qué grado o grados, Blincyto debe ser DESCONTINUADO de forma permanente?",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Grado 1.",
                         "isCorrect": false,
-                        "level":"3"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Grado 2.",
                         "isCorrect": false,
-                        "level":"3"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Grado 3.",
                         "isCorrect": false,
-                        "level":"3"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Grado 4.",
                         "isCorrect": true,
-                        "level":"3"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "7",
+                "level":2,
                 "statement": "¿Cuál es la dosis inicial de Blincyto para los pacientes adultos (mayores a 45kg) en la indicación recaída o refractariedad?",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Del día 1 al 28 son 28 mcg/día.",
                         "isCorrect": false,
-                        "level":"3"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Del día 1 al 28 son 9 mcg/día.",
                         "isCorrect": false,
-                        "level":"3"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Del día 1 al 7 son 5 mcg/m2/día y del día 8 al 28: 15 mcg/m2/día.",
                         "isCorrect": false,
-                        "level":"3"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Del día 1 al 7 son 9 mcg/día y del día 8 al 28: 28 mcg/día.",
                         "isCorrect": true,
-                        "level":"3"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "8",
+                "level":2,
                 "statement": "¿Cuántos días u horas puedo conservar la Bolsa IV preparada que contiene la solución para infusión de Blincyto?",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Temperatura ambiente hasta 27°C: 96 horas. Refrigerada entre 2°C a 8°C: 10 días.",
                         "isCorrect": true,
-                        "level":"3"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Temperatura ambiente hasta 27°C: 100 horas. Refrigerada entre 2°C a 8°C: 20 días.",
                         "isCorrect": false,
-                        "level":"3"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Temperatura ambiente hasta 27°C: 24 horas. Refrigerada entre 2°C a 8°C: 5 días.",
                         "isCorrect": false,
-                        "level":"3"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Temperatura ambiente hasta 27°C: 72 horas. Refrigerada entre 2°C a 8°C: 15 días.",
                         "isCorrect": false,
-                        "level":"3"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "9",
+                "level":3,
                 "statement": "Actualmente se considera relevante el estudio de los casos de pacientes oncológicos en grupos interdisciplinarios. ¿Debe hacer parte el patólogo de estos?",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Si.",
                         "isCorrect": true,
-                        "level":"4"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"No.",
                         "isCorrect": false,
-                        "level":"4"
+                        "step":1
                     }
                 ]
             },
             {
                 "id": "10",
+                "level":3,
                 "statement": "Cuál de los siguientes procesos le ocurre a una muestra de tumor o biopsia en la fase preanalítica",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"El tratamiento dado a la muestra antes de ser parafinada (Ej. fijación).",
                         "isCorrect": true,
-                        "level":"4"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"El proceso de deshidratación y parafinación, corte de láminas.",
                         "isCorrect": true,
-                        "level":"4"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"La tinción con Hematoxilina Eosina.",
                         "isCorrect": false,
-                        "level":"4"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"La inmunohistoquimica.",
                         "isCorrect": false,
-                        "level":"4"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "11",
+                "level":3,
                 "statement": "Si el patólogo está involucrado en la solicitud de pruebas moleculares, ¿Cuáles son las principales ventajas para el paciente?",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Ninguna, perdida de recursos y tiempo.",
                         "isCorrect": false,
-                        "level":"4"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Correcta caracterización de la patología.",
                         "isCorrect": true,
-                        "level":"4"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Disminución de tiempos para diagnostico.",
                         "isCorrect": true,
-                        "level":"4"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Disminución de tiempos para inicio del tratamiento.",
                         "isCorrect": true,
-                        "level":"4"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "12",
+                "level":4,
                 "statement": "¿Cuál es el objetivo de la Navegación en Oncología?",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Reducir la mortalidad y la morbilidad por cáncer a través de la eliminación de barreras a la atención oportuna del cáncer.",
                         "isCorrect": true,
-                        "level":"5"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Solo se encarga de la coordinación de la atención del paciente con diagnóstico de cáncer.",
                         "isCorrect": false,
-                        "level":"5"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Solo se encarga de las autorizaciones de las órdenes clínicas de los pacientes con diagnóstico oncológico.",
                         "isCorrect": false,
-                        "level":"5"
+                        "step":2
                     }
                 ]
             },
             {
                 "id": "13",
+                "level":4,
                 "statement": "¿En qué año inició la estrategia de Navegación para pacientes con cáncer?",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"1995.",
                         "isCorrect": false,
-                        "level":"5"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"1990.",
                         "isCorrect": true,
-                        "level":"5"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"2000.",
                         "isCorrect": false,
-                        "level":"5"
+                        "step":2
                     }
                 ]
             },
             {
                 "id": "14",
+                "level":4,
                 "statement": "Son tipos de Navegadores de pacientes, EXCEPTO:",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Navegación de enfermería en oncología clínica.",
                         "isCorrect": false,
-                        "level":"5"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Navegación de autorizaciones clínicas.",
                         "isCorrect": true,
-                        "level":"5"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Navegador de trabajo social de oncología clínica.",
                         "isCorrect": false,
-                        "level":"5"
+                        "step":2
                     }
                 ]
             },
             {
                 "id": "15",
+                "level":5,
                 "statement": "La dilución de Romiplostim es necesaria únicamente si el cálculo de la dosis total del paciente es: ",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Menor a 50 mcg.",
                         "isCorrect": false,
-                        "level":"6"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Mayor a 32 mcg.",
                         "isCorrect": false,
-                        "level":"6"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Menor a 23 mcg.",
                         "isCorrect": true,
-                        "level":"6"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Menor o igual a 32 mcg.",
                         "isCorrect": false,
-                        "level":"6"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "16",
+                "level":5,
                 "statement": "La concentración final de medicamento que se obtiene en los pasos de reconstitución y dilución del Romiplostim respectivamente son:",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Reconstitución: 500 mcg/ mL – Dilución: 125 mcg/ mL.",
                         "isCorrect": true,
-                        "level":"6"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Reconstitución: 250 mcg/ mL – Dilución: 125 mcg/ mL.",
                         "isCorrect": false,
-                        "level":"6"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Reconstitución: 500 mcg/ mL – Dilución: 225 mcg/ mL.",
                         "isCorrect": false,
-                        "level":"6"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Reconstitución: 250 mcg/ mL – Dilución: 72 mcg/ mL.",
                         "isCorrect": false,
-                        "level":"6"
+                        "step":3
                     }
                 ]
             },
             {
                 "id": "17",
+                "level":5,
                 "statement": "La dosis total del paciente se calcula:",
                 "Answers":[
                     {
                         "id":"0",
                         "text":"Multiplicando el peso en kg por la dosis en mcg/kg, y dividiendo por 0,72 mL.",
                         "isCorrect": false,
-                        "level":"6"
+                        "step":0
                     },
                     {
                         "id":"1",
                         "text":"Dividiendo el peso en kg en la dosis en mcg/kg.",
                         "isCorrect": false,
-                        "level":"6"
+                        "step":1
                     },
                     {
                         "id":"2",
                         "text":"Multiplicando el peso en kg por la dosis en mcg/kg. ",
                         "isCorrect": true,
-                        "level":"6"
+                        "step":2
                     },
                     {
                         "id":"3",
                         "text":"Multiplicando el peso en kg por la dosis en mcg/kg y dividiendo por 2,25 mL.",
                         "isCorrect": false,
-                        "level":"6"
+                        "step":3
                     }
                 ]
             }

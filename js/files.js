@@ -7,8 +7,9 @@
             fetch("./Data/dataf.txt")
             .then((response) => response.text())
             .then((textView) =>  {
-                    console.log(b64DecodeUnicode(textView));
-                    console.log(JSON.parse(b64DecodeUnicode(textView)));
+                    // console.log(b64DecodeUnicode(textView));
+                    // console.log(b64EncodeUnicode(textView));
+                    // console.log(JSON.parse(b64DecodeUnicode(textView)));
                     resolve( JSON.parse(b64DecodeUnicode(textView))[0].firebaseConfig );
             } );
         });
@@ -20,7 +21,7 @@
             .then((textView) => resolve(textView) );
         });
     }
-    // loadDataFile('json')s
+    // loadDataFile('json')
     export function loadDataFile(ext) {
         return new Promise((resolve,reject)=>{
             fetch("./Data/data."+ext)
