@@ -298,7 +298,7 @@ padding-right: 10px;
 
 @media (max-width: 768px) {
 	.ContenedorNiveles{
-		height:65vh;
+		height:60vh;
 	}
 }
 
@@ -399,7 +399,7 @@ padding-right: 10px;
 .EstiloPregunta{
 	width:90%;
 	color: white;
-	font-size:20px;
+	font-size:16px;
 	line-height: 1em;
 	font-family: Gordita-Bold;
 	margin: 0 auto;
@@ -438,7 +438,7 @@ padding-right: 10px;
 }
 
 .BotonRespuesta {
-	font-size: 16px;
+	font-size: 14px;
 	color: #fff;
 	width: 85%;
 	margin: 0 auto;
@@ -450,7 +450,7 @@ padding-right: 10px;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	font-family: Gordita-Bold;
+	font-family: Gordita-Medium;
 	line-height: 1em;
 }
 
