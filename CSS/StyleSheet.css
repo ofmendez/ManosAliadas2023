@@ -36,6 +36,8 @@ input[type="text"] {
 	font-family: Gordita-Medium;
 	font-size: 18px;
 	text-align: center;
+	border-radius: 100px;
+	width: -webkit-fill-available;
 }
 #idNombreCompleto {
 	background-color: white;
@@ -65,6 +67,8 @@ input[type="text"] {
 	filter: drop-shadow(2px 2px 2px #555);
 }
 
+/* Configuración contenedor ordenador */
+
 .Wrapper {
 	height: 100%;
 	min-height: 100%;
@@ -86,6 +90,35 @@ input[type="text"] {
 	max-height: 90vh;
 	min-height: 540px;
 }
+
+/* Configuracion Pantalla completa en móviles */
+
+@media (max-width: 768px) {
+
+	body, html {
+		height: 100%;
+	  }
+
+	.Wrapper {
+		height: 100%;
+		min-height: 100%;
+		width: 100%;
+		text-align: center;
+	}
+	
+	.Content {
+		top: 0vh;
+		-webkit-transform: translateY(0%);
+		-ms-transform: translateY(0%);
+		transform: translateY(-0%);
+		width: 100%;
+		min-width: 100%;
+		height: 100%;
+		max-height: 100%;
+		min-height: 100%;
+		overflow: hidden;
+	}
+  }
 
 #BackgroundImageFull {
 	width: 100%;
@@ -109,6 +142,7 @@ left:50%;
 transform: translate(-50%, 0%);
 filter: drop-shadow(9px 9px 2px #55555555);
 z-index:6 !important;
+max-width: 220px;
 }
 
 .BotonIniciar{
@@ -152,21 +186,21 @@ z-index:4;
 	left:50%;
 	transform: translate(-50%, -50%);
 	z-index:6 !important;
-	width:100%;
+	width:60%;
 	
 }
 
 .LogoRegistro{
-	width:40%;
+	width:50%;
 	margin-bottom:-30px;
 }
 
 .ContainerCampoRegistro{
 	background-image: url("../Images/FondoCampoRegistro.png");
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 100% 100%;
 	background-position: center center;
-	padding: 10px 90px;
+	padding: 60px 30px;
 }
 
 /* Instrucciones 01 */
@@ -197,6 +231,7 @@ z-index:4;
 	transform: translate(-50%, -50%);
 	z-index: 1;
 	width:65%;
+	max-width: 350px;
 }
 
 .BotonInstrucciones02{
@@ -256,9 +291,16 @@ height:55vh;
 overflow-y: scroll;
 overflow-x: hidden;
 width: 80%;
+max-width: 400px;
 margin: 0 auto;
 padding-right: 10px;
 	}
+
+@media (max-width: 768px) {
+	.ContenedorNiveles{
+		height:65vh;
+	}
+}
 
 .ContenedorSeleccionNivel{
 	background:url(../Images/FondoRespuesta.png) no-repeat center center;
@@ -270,12 +312,15 @@ padding-right: 10px;
 .BotonSeleccionNivel{
 
 	color: #fff;
+	padding: 6px;
 	font-family: Gordita-Bold;
 	
 }
 .BotonSeleccionNivel span{
 	font-family: Gordita-Medium;
 	font-size:12px;
+	display: block;
+    line-height: 1em;
 }
 
 .NivelInactivo{
@@ -406,6 +451,7 @@ padding-right: 10px;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	font-family: Gordita-Bold;
+	line-height: 1em;
 }
 
 .RespuestaCorrecta {
