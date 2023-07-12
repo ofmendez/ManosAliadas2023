@@ -61,6 +61,7 @@ input[type="text"] {
 	width: fit-content;
 	filter: drop-shadow(9px 9px 2px #55555555);
 	background-color: transparent;
+	cursor:pointer;
 }
 
 .BotonAplicativo span{
@@ -319,6 +320,7 @@ padding-right: 10px;
 	color: #fff;
 	padding: 6px;
 	font-family: Gordita-Bold;
+	cursor: pointer;
 	
 }
 .BotonSeleccionNivel span{
@@ -418,7 +420,7 @@ padding-right: 10px;
 	background-size: 100% 100%;
 	width:90%;
 	margin: 0 auto;
-	filter: drop-shadow(15px 15px 2px #55555555);
+	filter: drop-shadow(4px 4px 2px #55555555);
 }
 
 .ImagenRespuestas{
@@ -451,7 +453,7 @@ padding-right: 10px;
 }
 
 .BotonRespuesta {
-	font-size: 12px;
+	font-size: clamp(10px, 1.84vh, 12px);
 	color: #fff;
 	width: 85%;
 	margin: 0 auto;

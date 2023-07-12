@@ -20,7 +20,7 @@
                     },
                     {
                         "id":"2",
-                        "text":"Validando que tenga aprobación de EMA, FDA e INIVMA.",
+                        "text":"Validando que tenga aprobación de EMA, FDA e INVIMA.",
                         "isCorrect": false,
                         "step":2
                     }
@@ -290,7 +290,7 @@
             {
                 "id": "10",
                 "level":3,
-                "statement": "Cuál de los siguientes procesos le ocurre a una muestra de tumor o biopsia en la fase preanalítica",
+                "statement": "Cuál de los siguientes procesos le ocurre a una muestra de tumor o biopsia en la fase preanalítica. (Seleccione las 2 respuestas correctas)",
                 "Answers":[
                     {
                         "id":"0",
@@ -312,7 +312,7 @@
                     },
                     {
                         "id":"3",
-                        "text":"La inmunohistoquimica.",
+                        "text":"La inmunohistoquímica.",
                         "isCorrect": false,
                         "step":3
                     }
@@ -321,7 +321,7 @@
             {
                 "id": "11",
                 "level":3,
-                "statement": "Si el patólogo está involucrado en la solicitud de pruebas moleculares, ¿Cuáles son las principales ventajas para el paciente?",
+                "statement": "Si el patólogo está involucrado en la solicitud de pruebas moleculares, ¿Cuáles son las principales ventajas para el paciente? (Seleccione las 3 respuestas correctas)",
                 "Answers":[
                     {
                         "id":"0",
