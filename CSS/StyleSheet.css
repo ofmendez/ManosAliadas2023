@@ -330,6 +330,10 @@ padding-right: 10px;
     line-height: 1em;
 }
 
+.NivelSuperado{
+	filter: hue-rotate(240deg) !important;
+}
+
 .NivelInactivo{
 	filter: grayscale(100%);
 	pointer-events: none;
