@@ -466,6 +466,12 @@ padding-right: 10px;
 	line-height: 1.1em;
 }
 
+@media (max-width: 768px) {
+.BotonRespuesta {
+	padding: 2vh 2vw 2vh 4vw;
+}
+}
+
 .RespuestaCorrecta {
 	background-image: url("../Images/FondoRespuestaCorrecta.png") !important;
 }
