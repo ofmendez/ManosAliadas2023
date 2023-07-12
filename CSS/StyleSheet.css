@@ -396,6 +396,7 @@ padding-right: 10px;
 .TituloNivel{
 	text-align: center;
 	width: auto !important;
+	cursor: default !important;
 }
 
 .ContenedorPregunta{
@@ -464,6 +465,7 @@ padding-right: 10px;
 	background-size: 100% 100%;
 	font-family: Gordita-Medium;
 	line-height: 1.1em;
+	cursor: pointer;
 }
 
 @media (max-width: 768px) {
