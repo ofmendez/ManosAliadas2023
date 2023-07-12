@@ -81,9 +81,9 @@ const SetQuestionAndAnswers = (question)=>{
         let aImg= InsertElement('img',['IconoRespuestas'],'',r,undefined,false);
         aImg.src = `../Images/Ans${ans.id}.png`;
         InsertElement('div',['BotonRespuesta'],ans.text,r,'answer'+ans.id,false);
-        InsertElement('div',['space2vh'],'',ñ('#contRespuestas'),undefined,false);
+        InsertElement('div',['space1vh'],'',ñ('#contRespuestas'),undefined,false);
     }
-    InsertElement('div',['space2vh'],'',ñ('#contRespuestas'),undefined,false);
+    InsertElement('div',['space1vh'],'',ñ('#contRespuestas'),undefined,false);
 }
 
 const Answer = (ans, question)=>{
