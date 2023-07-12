@@ -156,9 +156,16 @@ const NextQuestionOrResults = ()=>{
     if (Object.keys(answered).length === (Questions.length) )
         GoToResults();
     else if(Questions[progress-1].level !== Questions[progress].level)
-        GoToLobby();
+        GoToEndLevel();
+        // GoToLobby();
     else
         GoQuestion(progress);
+}
+
+const GoToEndLevel = ()=>{
+    views.GoTo("FinalLevel").then(()=>{
+        ñ('#idNext').addEventListener('click', (e)=>GoToLobby() );
+    });
 }
 
 const GoToResults = ()=>{
