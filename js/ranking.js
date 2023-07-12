@@ -8,7 +8,7 @@ function updateTable(users, values) {
     let p = "";
     users.forEach((user,i) => {
         p +=   `<div class="FranjaPuntaje">
-                <div class="NumeroPosicion">${i}.</div>
+                <div class="NumeroPosicion">${(i+1)}.</div>
                 <div class="NombreJugador">${user.username}</div>
                 <div class="PuntajeJugador">${user.score}</div>
             </div>`;
@@ -36,7 +36,7 @@ window.Reload = ()=>{
         
         users.sort((a, b) => { return b.score - a.score; });
         console.log("da: ",users.length);
-        updateTable(users, ['acceptAssesment','username', 'email', 'score', 'company', 'mailBox']);
+        updateTable(users.slice(0, 10), ['acceptAssesment','username', 'email', 'score', 'company', 'mailBox']);
         
     })
 }

@@ -1,20 +1,30 @@
-    import {loadViewFile} from './files.js'
+import {loadViewFile} from './files.js'
+import {ñ} from './utils.js'
 
-    const content = document.getElementById('Content');
-    const view = function(textView) {
-        content.innerHTML = textView;
+class View{
+    constructor(textView, target){
+        target.innerHTML = textView;
     }
-    const PageState = function() {
-        let currentState = new view("");
-        this.change = state => currentState = state;
-    }
-    const page = new PageState();
-    
-    export const GoTo = (viewName) => {
-        return new Promise((resolve,reject)=>{
-            loadViewFile(viewName).then((res)=>{
-                page.change(new view(res));
-                resolve();
-            } );
+}
+
+class PageState {
+    currentState = new View("", ñ('#Content'));
+    change = (state) => this.currentState = state;
+}
+
+const page = new PageState();
+
+const GoChange = (html) => {
+    page.change(new View(html, ñ('#Content')));
+}
+
+export const GoTo = (viewName) => {
+    return new Promise((resolve,reject)=>{
+        loadViewFile(viewName).then((res)=>{
+            if (document.startViewTransition) 
+                document.startViewTransition(() => resolve(GoChange(res)));
+            else
+                resolve(GoChange(res));
         });
-    }
+    });
+}
