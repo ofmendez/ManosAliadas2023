@@ -290,7 +290,7 @@
             {
                 "id": "10",
                 "level":3,
-                "statement": "Cuál de los siguientes procesos le ocurre a una muestra de tumor o biopsia en la fase preanalítica. (Seleccione las 2 respuestas correctas)",
+                "statement": "Cuál de los siguientes procesos le ocurre a una muestra de tumor o biopsia en la fase preanalítica.",
                 "Answers":[
                     {
                         "id":"0",
@@ -301,7 +301,7 @@
                     {
                         "id":"1",
                         "text":"El proceso de deshidratación y parafinación, corte de láminas.",
-                        "isCorrect": true,
+                        "isCorrect": false,
                         "step":1
                     },
                     {
