@@ -55,6 +55,17 @@ export function updateScore(userId, newScore, answers) {
         }).catch((e)=> reject("error getDB: "+e))
     });
 }
+export function updateLevelScore(userId, newScore) {
+    return new Promise((resolve,reject)=>{
+        getDB().then((db)=>{
+            const updates = {};
+            updates['/users/' + userId+'/score'] = newScore;
+            update(ref(db), updates).then(()=>{
+                resolve("Updated!! ")
+            });
+        }).catch((e)=> reject("error getDB: "+e))
+    });
+}
 
 export function DeleteUser(userId) {
     return true;

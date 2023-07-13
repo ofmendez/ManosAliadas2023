@@ -1,6 +1,6 @@
 import { ñ,InsertElement, ConmuteClassAndInner} from './utils.js'
 import {loadDataFile} from './files.js'
-import {createUserData ,getUserData, updateScore} from "./database.js";
+import {createUserData ,getUserData, updateScore, updateLevelScore} from "./database.js";
 import * as views from "./views.js";
 
 
@@ -10,7 +10,6 @@ let TotalQuestions = {}
 let countdownTimer = {}
 let progress = 0
 let answered = {}
-let totalPoints = 0
 let pointsBySuccess = 600
 let timeTrans = 0;
 let pausedTime = false
@@ -18,11 +17,10 @@ let pausedTime = false
 
 views.GoTo("Wellcome").then(()=>{  
     ñ('#startButton').addEventListener('click', (e)=>{
-        console.log("startButton");
         ñ('#PopUpRegistro').hidden = false;
-        // GoToLobby();
     });
 });
+
 loadDataFile("txt").then((res)=>{
     TotalQuestions = res[0].Questions;
     console.log(TotalQuestions);
@@ -55,10 +53,9 @@ const GoToLobby = ()=>{
     Questions = TotalQuestions;
 
     views.GoTo("Lobby").then(()=>{
-        console.log("id: ",Questions[progress].id,"level: ",Questions[progress].level);
         let questionBtns = ñ('.ContenedorSeleccionNivel');
         questionBtns.forEach( (b, i)=> {
-            b.classList.add(i===Questions[progress].level?'NivelActual':(i>=Questions[progress].level?'NivelInactivo':'NivelActivo'));
+            b.classList.add(i===Questions[progress].level?'NivelActual':(i>=Questions[progress].level?'NivelInactivo':'NivelSuperado'));
         });
         questionBtns[Questions[progress].level].addEventListener('click', ()=> GoQuestion(progress) );
     });
@@ -73,7 +70,7 @@ const GoQuestion = ()=>{
 
 const SetQuestionAndAnswers = (question)=>{
     ñ('#TituloNivel').innerHTML="NIVEL "+(question.level+1)
-    ñ('.SeccionPuntaje')[0].innerHTML=totalPoints
+    ñ('.SeccionPuntaje')[0].innerHTML= localStorage.score
     ñ('#TextoPregunta').innerHTML = question.statement;
     for(let ans of question.Answers){
         let r = InsertElement('div',['Respuesta'],'',ñ('#contRespuestas'),undefined,false);
@@ -89,7 +86,6 @@ const SetQuestionAndAnswers = (question)=>{
 const Answer = (ans, question)=>{
     let classTarget = ans.isCorrect ?'RespuestaCorrecta':'RespuestaIncorrecta';
     UpdateStatus(ans.id, ans.isCorrect)
-    // AnimateAnswer(ans,ñ('#answer'+ans.id), classTarget,  0);
     AnimateAnswer(ans,ñ('#answer'+ans.id), classTarget,  150);
 }
 
@@ -98,11 +94,10 @@ const UpdateStatus = ( idAns, isCorrect)=>{
     answered[progress] = idAns;
     localStorage.answered = JSON.stringify(answered);
     if (isCorrect)
-        totalPoints += pointsBySuccess -timeTrans
+        localStorage.score = Number.parseInt(localStorage.score)+ pointsBySuccess -timeTrans
     progress++;
     localStorage.progress = progress;
 }
-
 
 const RunTimer = ()=>{
     countdownTimer = setInterval(() => {
@@ -110,13 +105,11 @@ const RunTimer = ()=>{
         timeTrans = timeTrans>=pointsBySuccess? pointsBySuccess: timeTrans;
     }, 1000);
 }
+
 const Login = (form)=>{
-    localStorage.removeItem("answered");
-    localStorage.removeItem("progress");
-    progress = 0;
-    createUserData(
-        form.elements['idUsername'].value,
-    ).then((res)=>{
+    Reset();
+    createUserData( form.elements['idUsername'].value, )
+    .then((res)=>{
         views.GoTo("Instrucciones01").then(()=>{
             ñ('#idNext').addEventListener('click', (e)=>{
                 views.GoTo("Instrucciones02").then(()=>{
@@ -130,7 +123,6 @@ const Login = (form)=>{
     })
 }
 
-
 const AnimateAnswer = (ans, element, classTarget, interval)=>{
     document.body.classList.add('avoidEvents');
     ConmuteClassAndInner(element,classTarget,'dumb')
@@ -143,7 +135,6 @@ const AnimateAnswer = (ans, element, classTarget, interval)=>{
 
 const ShowFinalMessage = (ans)=>{
     clearInterval(countdownTimer);
-    // views.GoTo("FinalTrivias").then(()=>{   
     views.GoTo("Retroalimentacion").then(()=>{   
         ñ('#BackgroundImageFull').src = ans.isCorrect? "../Images/FondoCorrecta.jpg":"../Images/FondoIncorrecta.jpg";
         ñ('#BackgroundImageFull').hidden = false;
@@ -157,25 +148,28 @@ const NextQuestionOrResults = ()=>{
         GoToResults();
     else if(Questions[progress-1].level !== Questions[progress].level)
         GoToEndLevel();
-        // GoToLobby();
     else
         GoQuestion(progress);
 }
 
 const GoToEndLevel = ()=>{
     views.GoTo("FinalLevel").then(()=>{
-        ñ('#idNext').addEventListener('click', (e)=>GoToLobby() );
+        updateLevelScore( localStorage.getItem("userName"), Number.parseInt(localStorage.score) ).
+        then((res)=>{
+            if(Questions[progress].level === 5)
+                ñ('#idDownload').hidden = false;
+            ñ('#idNext').addEventListener('click', (e)=>GoToLobby() );
+        });
     });
 }
 
 const GoToResults = ()=>{
     document.body.classList.add('avoidEvents');
-    updateScore( localStorage.getItem("userName"), totalPoints, answered)
+    updateScore( localStorage.getItem("userName"), Number.parseInt(localStorage.score), answered)
     .then((res)=>{
         views.GoTo("FinalTrivias").then((res)=>{
             console.log("Terminado!");
-            localStorage.removeItem("answered");
-            localStorage.removeItem("progress");
+            Reset();
             document.body.classList.remove('avoidEvents');
         });
     }).catch((e) =>{
@@ -186,7 +180,14 @@ const GoToResults = ()=>{
     });
 }
 
-
+const Reset = ()=>{
+    localStorage.removeItem("answered");
+    localStorage.removeItem("progress");
+    localStorage.removeItem("score");
+    localStorage.score = 0;
+    progress = 0;
+    answered = {};
+}
 
 
 //////////////////////////////////////////////

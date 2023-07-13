@@ -320,7 +320,7 @@ padding-right: 10px;
 	color: #fff;
 	padding: 6px;
 	font-family: Gordita-Bold;
-	cursor: pointer;
+	/* cursor: pointer; */
 	
 }
 .BotonSeleccionNivel span{
@@ -332,6 +332,10 @@ padding-right: 10px;
 
 .NivelSuperado{
 	filter: hue-rotate(240deg) !important;
+}
+
+.NivelActual{
+	cursor: pointer;
 }
 
 .NivelInactivo{
