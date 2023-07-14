@@ -1,17 +1,36 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js'
-import { getDatabase, set, ref, onValue, child, push, update, remove } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js'
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js'
+import { getDatabase, set, ref, onValue, child, push, update, remove, goOffline , goOnline} from 'https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js'
 import {loadCredentials} from './files.js'
 
 let firebaseConfig = {}
 let database ={}
 let app = {}
 let existDatabase = false;
+let isOnline = true;
+
+
+export const toggleOnlineState = (online) => {
+    // return new Promise((resolve,reject)=>{
+        console.log("toggleOnlineState: "+online);
+        getDB().then((db)=>{
+            if (online) {
+                goOnline(db);
+                console.log("goOnline!!!!!!!!!  1");
+            } else {
+                goOffline(db);
+                console.log("goOffline!!!!!!!!! 2");
+            }
+            // resolve();
+            isOnline = online;
+        }).catch((e)=> console.log("error getDB_1: "+e));
+    // });
+};
 
 
 const getDB = function (){
     return new Promise((resolve,reject)=>{
         if (existDatabase){
-            resolve(database)
+            resolve(database);
         } else{
             existDatabase =true;
             loadCredentials().then((res)=>{
@@ -19,15 +38,18 @@ const getDB = function (){
                 app = initializeApp(firebaseConfig);
                 database = getDatabase(app);
                 resolve(database);
-            });
+            }).catch((e)=> reject("error getDB_2: "+e));
         }
     });
 };
 
 export function getUserData() {
     // return true;
+    console.log("hijole");
     return new Promise((resolve,reject)=>{
         getDB().then((db)=>{
+            if(!isOnline) 
+                toggleOnlineState(true);
             const starCountRef = ref(db, '/users');
             onValue(starCountRef, (snapshot) => {
                 resolve(snapshot.val())
@@ -43,6 +65,7 @@ export function getUserData() {
 export function updateScore(userId, newScore, answers) {
     return new Promise((resolve,reject)=>{
         getDB().then((db)=>{
+            if(!isOnline) toggleOnlineState(true)
             const updates = {};
             updates['/users/' + userId+'/score'] = newScore;
             Object.keys(answers).forEach((a,i)=>{
@@ -51,6 +74,7 @@ export function updateScore(userId, newScore, answers) {
             });
             update(ref(db), updates).then(()=>{
                 resolve("Updated!! ")
+                // goOnline().then(()=>{goOffline();}) ;
             });
         }).catch((e)=> reject("error getDB: "+e))
     });
@@ -58,10 +82,12 @@ export function updateScore(userId, newScore, answers) {
 export function updateLevelScore(userId, newScore) {
     return new Promise((resolve,reject)=>{
         getDB().then((db)=>{
+            if(!isOnline) toggleOnlineState(true)
             const updates = {};
             updates['/users/' + userId+'/score'] = newScore;
             update(ref(db), updates).then(()=>{
-                resolve("Updated!! ")
+                resolve("Updated!! ");
+                // goOnline().then(()=>{goOffline();});
             });
         }).catch((e)=> reject("error getDB: "+e))
     });
@@ -77,11 +103,14 @@ export function DeleteUser(userId) {
     });
 }
 
-
 export function createUserData(_username) {
-
+    console.log("createuser: "+_username);
     return new Promise((resolve,reject)=>{
         getDB().then((db)=>{
+            console.log("createuser isOnline: "+isOnline);
+            while(!isOnline){
+                toggleOnlineState(true);
+            } 
             set(ref(db, 'users/' + _username), {
                 username : _username,
                 p01 : -1,
@@ -107,5 +136,6 @@ export function createUserData(_username) {
         }).catch((e)=> reject("error getDB: "+e))
     });
 }
+
 
 // export {createUserData }

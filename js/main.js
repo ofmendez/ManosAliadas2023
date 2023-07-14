@@ -1,6 +1,6 @@
 import { ñ,InsertElement, ConmuteClassAndInner} from './utils.js'
 import {loadDataFile} from './files.js'
-import {createUserData ,getUserData, updateScore, updateLevelScore} from "./database.js";
+import {createUserData ,getUserData, updateScore, updateLevelScore, toggleOnlineState} from "./database.js";
 import * as views from "./views.js";
 
 
@@ -13,6 +13,7 @@ let answered = {}
 let pointsBySuccess = 600
 let timeTrans = 0;
 let pausedTime = false
+let multiAns = {}
 
 
 views.GoTo("Wellcome").then(()=>{  
@@ -30,17 +31,18 @@ loadDataFile("txt").then((res)=>{
 window.TryLogin = (form)=>{
     progress = localStorage.getItem("progress") || 0;
     getUserData().then((res)=>{
+        console.log(res);
         let exist = false
         for (const u in res) 
             if (res.hasOwnProperty(u)) 
                 exist |= u=== form.elements['idUsername'].value
         localStorage.setItem("userName", form.elements['idUsername'].value );
+        console.log(exist);
         if(exist)
             GoToLobby();
         else
             Login(form)
         return false;
-
     }).catch((res)=> {
         console.log("Error login: "+res)
         alert("Ranking, Ha ocurrido un error, intente nuevamente.")
@@ -58,6 +60,7 @@ const GoToLobby = ()=>{
             b.classList.add(i===Questions[progress].level?'NivelActual':(i>=Questions[progress].level?'NivelInactivo':'NivelSuperado'));
         });
         questionBtns[Questions[progress].level].addEventListener('click', ()=> GoQuestion(progress) );
+        toggleOnlineState(false);
     });
 }
 
@@ -85,8 +88,16 @@ const SetQuestionAndAnswers = (question)=>{
 
 const Answer = (ans, question)=>{
     let classTarget = ans.isCorrect ?'RespuestaCorrecta':'RespuestaIncorrecta';
-    UpdateStatus(ans.id, ans.isCorrect)
-    AnimateAnswer(ans,ñ('#answer'+ans.id), classTarget,  150);
+    multiAns[question.id] = multiAns[question.id]? multiAns[question.id]+1 : 1;
+    console.log(multiAns[question.id]);
+    if(question.id === "11" && ans.isCorrect && multiAns[question.id] <= 2){
+        ConmuteClassAndInner(ñ('#answer'+ans.id),classTarget,'dumb')
+    }else{
+        let classTarget = ans.isCorrect ?'RespuestaCorrecta':'RespuestaIncorrecta';
+        UpdateStatus(ans.id, ans.isCorrect)
+        AnimateAnswer(ans,ñ('#answer'+ans.id), classTarget,  150);
+        // AnimateAnswer(ans,ñ('#answer'+ans.id), classTarget,  0);
+    }
 }
 
 const UpdateStatus = ( idAns, isCorrect)=>{
@@ -107,9 +118,11 @@ const RunTimer = ()=>{
 }
 
 const Login = (form)=>{
+    console.log("Login");
     Reset();
     createUserData( form.elements['idUsername'].value, )
     .then((res)=>{
+        console.log("E.login: "+res);
         views.GoTo("Instrucciones01").then(()=>{
             ñ('#idNext').addEventListener('click', (e)=>{
                 views.GoTo("Instrucciones02").then(()=>{
@@ -117,6 +130,7 @@ const Login = (form)=>{
                 });
             });
         });
+        toggleOnlineState(false);
     }).catch((e)=> {
         console.log("E.login: "+e);
         alert("Ha ocurrido un error, intente nuevamente. E.login.")
@@ -159,6 +173,7 @@ const GoToEndLevel = ()=>{
             if(Questions[progress].level === 5)
                 ñ('#idDownload').hidden = false;
             ñ('#idNext').addEventListener('click', (e)=>GoToLobby() );
+            toggleOnlineState(false);
         });
     });
 }
@@ -172,6 +187,7 @@ const GoToResults = ()=>{
             Reset();
             document.body.classList.remove('avoidEvents');
         });
+        toggleOnlineState(false);
     }).catch((e) =>{
         console.log("Error Update: "+e);
         alert("Ocurrió un error, intenta nuevamente.");
