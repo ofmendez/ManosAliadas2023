@@ -761,3 +761,37 @@ height: 100svh;
 	so the new view sits on top and obscures the old view */
 	mix-blend-mode: normal;
 }
+
+#loader {
+	background-color: #e0e0e08c;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+#loader span{
+	width: 60px;
+    height: 60px;
+    border: 6px solid #5e5d5d;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+	top:38.2%;
+	position: relative;
+}	
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}

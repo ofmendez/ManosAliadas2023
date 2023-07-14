@@ -14,36 +14,44 @@ let pointsBySuccess = 600
 let timeTrans = 0;
 let pausedTime = false
 let multiAns = {}
+let clipBtn = new Audio('../Audio/btn.wav');
+let clipCorrect = new Audio('../Audio/Ganar.mp3');
+let clipFail = new Audio('../Audio/Fallar.mp3');
+let clipAmbient = new Audio('../Audio/Fondo.wav');
 
 
 views.GoTo("Wellcome").then(()=>{  
     ñ('#startButton').addEventListener('click', (e)=>{
+        clipAmbient.loop = true;
+        clipAmbient.play();
+        clipBtn.play();
         ñ('#PopUpRegistro').hidden = false;
     });
 });
 
 loadDataFile("txt").then((res)=>{
     TotalQuestions = res[0].Questions;
-    console.log(TotalQuestions);
+    console.log(TotalQuestions.length);
 });
     // loadDataFile('json')
 
 window.TryLogin = (form)=>{
+    Loading(true);
+    clipBtn.play();
     progress = localStorage.getItem("progress") || 0;
     getUserData().then((res)=>{
-        console.log(res);
         let exist = false
         for (const u in res) 
             if (res.hasOwnProperty(u)) 
                 exist |= u=== form.elements['idUsername'].value
         localStorage.setItem("userName", form.elements['idUsername'].value );
-        console.log(exist);
         if(exist)
             GoToLobby();
         else
             Login(form)
         return false;
     }).catch((res)=> {
+        Loading(false);
         console.log("Error login: "+res)
         alert("Ranking, Ha ocurrido un error, intente nuevamente.")
         return false;
@@ -51,7 +59,12 @@ window.TryLogin = (form)=>{
     return false;
 }
 
+const Loading =(state)=>{
+    ñ('#loader').hidden = !state;
+    document.body.classList.toggle('avoidEvents', state);
+}
 const GoToLobby = ()=>{
+    Loading(false);
     Questions = TotalQuestions;
 
     views.GoTo("Lobby").then(()=>{
@@ -89,14 +102,15 @@ const SetQuestionAndAnswers = (question)=>{
 const Answer = (ans, question)=>{
     let classTarget = ans.isCorrect ?'RespuestaCorrecta':'RespuestaIncorrecta';
     multiAns[question.id] = multiAns[question.id]? multiAns[question.id]+1 : 1;
-    console.log(multiAns[question.id]);
     if(question.id === "11" && ans.isCorrect && multiAns[question.id] <= 2){
+        clipBtn.play();
         ConmuteClassAndInner(ñ('#answer'+ans.id),classTarget,'dumb')
     }else{
+        let s_ans = ans.isCorrect? clipCorrect : clipFail;
+        s_ans.play();
         let classTarget = ans.isCorrect ?'RespuestaCorrecta':'RespuestaIncorrecta';
         UpdateStatus(ans.id, ans.isCorrect)
         AnimateAnswer(ans,ñ('#answer'+ans.id), classTarget,  150);
-        // AnimateAnswer(ans,ñ('#answer'+ans.id), classTarget,  0);
     }
 }
 
@@ -118,20 +132,21 @@ const RunTimer = ()=>{
 }
 
 const Login = (form)=>{
-    console.log("Login");
     Reset();
     createUserData( form.elements['idUsername'].value, )
     .then((res)=>{
-        console.log("E.login: "+res);
+        Loading(false);
         views.GoTo("Instrucciones01").then(()=>{
             ñ('#idNext').addEventListener('click', (e)=>{
+                clipBtn.play();    
                 views.GoTo("Instrucciones02").then(()=>{
-                    ñ('#idNext').addEventListener('click', (e)=>GoToLobby() );
+                    ñ('#idNext').addEventListener('click', (e)=>{clipBtn.play(); GoToLobby();} );
                 });
             });
         });
         toggleOnlineState(false);
     }).catch((e)=> {
+        Loading(false);
         console.log("E.login: "+e);
         alert("Ha ocurrido un error, intente nuevamente. E.login.")
     })
@@ -158,6 +173,7 @@ const ShowFinalMessage = (ans)=>{
 
 
 const NextQuestionOrResults = ()=>{
+    clipBtn.play();
     if (Object.keys(answered).length === (Questions.length) )
         GoToResults();
     else if(Questions[progress-1].level !== Questions[progress].level)
