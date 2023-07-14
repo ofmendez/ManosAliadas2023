@@ -178,7 +178,7 @@
             {
                 "id": "6",
                 "level":2,
-                "statement": "Durante la administración de Blincyto si un paciente presenta Síndrome de Liberación de Citoquinas ¿En qué grado o grados, Blincyto debe ser DESCONTINUADO de forma permanente?",
+                "statement": "Durante la administración de Blinatumomab si un paciente presenta Síndrome de Liberación de Citoquinas ¿En qué grado o grados, Blinatumomab debe ser DESCONTINUADO de forma permanente?",
                 "Answers":[
                     {
                         "id":"0",
@@ -209,7 +209,7 @@
             {
                 "id": "7",
                 "level":2,
-                "statement": "¿Cuál es la dosis inicial de Blincyto para los pacientes adultos (mayores a 45kg) en la indicación recaída o refractariedad?",
+                "statement": "¿Cuál es la dosis inicial de Blinatumomab para los pacientes adultos (mayores a 45kg) en la indicación recaída o refractariedad?",
                 "Answers":[
                     {
                         "id":"0",
@@ -240,7 +240,7 @@
             {
                 "id": "8",
                 "level":2,
-                "statement": "¿Cuántos días u horas puedo conservar la Bolsa IV preparada que contiene la solución para infusión de Blincyto?",
+                "statement": "¿Cuántos días u horas puedo conservar la Bolsa IV preparada que contiene la solución para infusión de Blinatumomab?",
                 "Answers":[
                     {
                         "id":"0",
